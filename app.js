@@ -5,6 +5,9 @@ function main() {
     var app = express();
     var port = 3000;
 
+    app.use(express.static('public'));
+    app.use('/node_modules', express.static('node_modules'));
+
     app.get(
         '/',
         function (request, response) {

@@ -6,10 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  },
   "dependencies": {
     "express": "^4.17.0",
-    "eslint": "^5.16.0"
+    "oidc-client": "^1.7.1",
+    "angular": "^1.7.8",
+    "angular-route": "^1.7.8"
   },
   "eslintConfig": {
     "env": {

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Welcome to Digital Persona</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="node_modules/oidc-client/dist/oidc-client.js"></script>
+    <!-- Application components start -->
+    <script src="app/services/oidc.service.js"></script>
+    <script src="app/app.controller.js"></script>
+    <script src="app/controllers/unauthorized.controller.js"></script>
+    <script src="app/controllers/authenticated.controller.js"></script>
+    <script src="app/app.js"></script>
+    <!-- Application components end -->
+</head>
+<body ng-app="app">
+    <div class="container" ng-controller="appController">
+        <div class="row">
+            <div class="col-12">
+                <div style="text-align: center">
+                    <h2>Welcome to Digital Persona</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div style="padding-top: 10%">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div ng-view></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
