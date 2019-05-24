@@ -4,10 +4,25 @@
 
     angular.module('app.controllers')
         .controller('unauthorizedController', ['$log', '$location', '$scope', 'oidcService', function ($log, $location, $scope, oidcService) {
-            $log.log('unauthorizedController: created');
+            $log.debug('unauthorizedController: created');
 
             $scope.authenticate = function () {
-                $location.path('/authenticated');
+
+                oidcService.signin()
+                    .then(
+                        function (user) {
+                            $log.debug('unauthorizedController.authenticateuser:', user);
+                            if (!!user) {
+                                $location.path('/authenticated');
+                            }
+                        }
+                    )
+                    .catch(
+                        function (error) {
+                            alert(error.message);
+                            $log.log('unauthorizedController.authenticateuser:', error);
+                        }
+                    );
             };
         }]
     );

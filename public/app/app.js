@@ -22,6 +22,13 @@
                         controller: 'authenticatedController'
                     }
                 )
+                .when(
+                    '/callback',
+                    {
+                        'templateUrl': 'app/controllers/callback.html',
+                        controller: 'callbackController'
+                    }
+                )
                 .otherwise(
                     {
                         redirectTo: '/unauthorized'

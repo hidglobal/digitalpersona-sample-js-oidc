@@ -22,31 +22,12 @@
     <script src="app/services/oidc.service.js"></script>
     <script src="app/app.controller.js"></script>
     <script src="app/controllers/unauthorized.controller.js"></script>
+    <script src="app/controllers/callback.controller.js"></script>
     <script src="app/controllers/authenticated.controller.js"></script>
     <script src="app/app.js"></script>
     <!-- Application components end -->
 </head>
-<body ng-app="app">
-    <div class="container" ng-controller="appController">
-        <div class="row">
-            <div class="col-12">
-                <div style="text-align: center">
-                    <h2>Welcome to Digital Persona</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div style="padding-top: 10%">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div ng-view></div>
-            </div>
-        </div>
-    </div>
-
+<body ng-app="app" ng-controller="appController">
+    <div ng-view></div>
 </body>
 </html>
