@@ -1,3 +1,4 @@
+/*global angular, Oidc*/
 (function () {
     'use strict';
 
@@ -29,14 +30,30 @@
 
                     return userManager.signinPopup(args)
                         .then(function (user) {
-                            $log.debug('oidcService.signin: user=', user);
-                            currentUser = user;
+                            $log.debug('oidcService.signin:<-- user=', user);
+                            return user;
                         })
                         .catch(function (error) {
                             $log.error('oidcService.signin:', error);
+                            throw(error);
                         });
+                }
 
-                    $log.debug('oidcService.signin:<--');
+                function signinCallback(url) {
+                    $log.debug('oidcService.signinCallback:==>');
+
+                    if (!userManager) {
+                        throw('oidcService.signinCallback:" Must call init method first');
+                    }
+
+                    return userManager.signinPopupCallback(url)
+                        .then(function (user) {
+                            $log.debug('oidcService.signinCallback:<-- signed in successfully', user);
+                        })
+                        .catch(function (error) {
+                            $log.error('oidcService.signinCallback:', error);
+                            throw(error);
+                        });
                 }
 
                 function signout(args) {
@@ -48,15 +65,11 @@
 
                     return userManager.signoutPopup(args)
                         .then(function () {
-                            currentUser = null;
-                            $log.debug('oidcService.signout: signed out successfully');
+                            $log.debug('oidcService.signout:<-- signed out successfully');
                         })
                         .catch(function (error) {
-                            $log.error('oidcService.signin:', error);
+                            $log.error('oidcService.signout:', error);
                         });
-
-
-                    $log.debug('oidcService.signout:<--');
                 }
 
                 function getCurrentUser() {
@@ -66,14 +79,14 @@
                         throw('oidcService.getCurrentUser:" Must call init method first');
                     }
 
-                    return currentUser;
-
                     $log.debug('oidcService.getCurrentUser:<--');
+                    return userManager.getUser();
                 }
-                
+
                 return {
                     init: init,
                     signin: signin,
+                    signinCallback: signinCallback,
                     signout: signout,
                     getCurrentUser: getCurrentUser
                 };

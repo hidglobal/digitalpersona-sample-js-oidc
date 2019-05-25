@@ -2,7 +2,35 @@
     <div class="row">
         <div class="col-12">
             <div style="text-align: center">
-                <h2>Welcome {{user}}</h2>
+                <h2>digitalPersona</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div style="text-align: center">
+                <span>Welcome {{user.profile.name}}. This is your access token:</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div style="text-align: center">
+                <span>{{user.access_token}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div style="text-align: center">
+                <span>This is your identity token:</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div style="text-align: center">
+                <span>{{user.id_token}}</span>
             </div>
         </div>
     </div>
@@ -12,7 +40,7 @@
                 <div class="form-group">
                     <div style="text-align: center; padding-top: 10px; padding-bottom: 10px">
                         <button type="submit" class="btn btn-primary" id="buttonSignout" aria-describedby="buttonSignoutHelp" ng-click="signout()">Sign out</button>
-                        <small id="buttonSignoutHelp" class="form-text text-muted">Click Sign in button to sign into DigitalPersona</small>
+                        <small id="buttonSignoutHelp" class="form-text text-muted">Click Sign out button to sign out from DigitalPersona</small>
                     </div>
                 </div>
             </form>

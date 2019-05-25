@@ -11,8 +11,9 @@ function main() {
     app.use('/node_modules', express.static('node_modules'));
 
     app.get(
-        '/#!/callback',
+        '/:ngroute',
         function (request, response) {
+            console.log('ngroute=' + request.params.ngroute);
             response.sendFile(path.join(__dirname + '/public/index.html'));
         }
     );

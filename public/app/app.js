@@ -6,7 +6,7 @@
         'app.controllers',
         'app.services'
     ])
-        .config(function ($routeProvider) {
+        .config(function ($routeProvider, $locationProvider) {
             $routeProvider
                 .when(
                     '/unauthorized',
@@ -34,6 +34,9 @@
                         redirectTo: '/unauthorized'
                     }
                 );
+
+            /* Enable HTML5 routes to avoid hashtag conflict in url*/
+            $locationProvider.html5Mode(true);
         })
         .run(function ($log, $rootScope) {
             $log.debug('run:==>');
