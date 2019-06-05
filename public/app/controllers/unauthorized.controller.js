@@ -13,7 +13,10 @@
                         function (user) {
                             $log.debug('unauthorizedController.authenticateuser:', user);
                             if (!!user) {
-                                $location.path('/authenticated');
+
+                                $scope.$apply(function () {
+                                    $location.path('/authenticated');
+                                });
                             }
                         }
                     )
