@@ -8,37 +8,37 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <div style="text-align: center">
-                <span>Welcome {{user.profile.name}}!!!</span>
+            <div style="padding: 20px 20px;">
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-12">
             <div style="text-align: center">
-                <span>This is your access token:</span>
+                <h3>Welcome {{user.profile.name}}!!!</h3>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-12">
-            <div style="text-align: center">
-                <span>{{user.access_token}}</span>
+            <div style="padding: 10px 10px;">
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-12">
-            <div style="text-align: center">
-                <span>This is your identity token:</span>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <div style="text-align: center">
-                <span>{{user.id_token}}</span>
-            </div>
+            <form>
+                <div class="form-group">
+                    <label for="inputAccessToken">This is your Access Token JWT:</label>
+                    <input type="text" value="{{user.access_token}}" class="form-control" id="inputAccessToken" aria-describedby="smallAccessToken" placeholder="No token has been provided">
+                    <small id="smallAccessToken" class="form-text text-muted">Click <a href="https://jwt.io/?value={{user.access_token}}" target="_blank">this</a> link to see decoded token.</small>
+                </div>
+                <div class="form-group">
+                    <label for="inputIdToken">This is your Identity Token JWT:</label>
+                    <input type="text" value="{{user.id_token}}" class="form-control" id="inputIdToken" aria-describedby="smallIdToken" placeholder="No token has been provided">
+                    <small id="smallIdToken" class="form-text text-muted">Click <a href="https://jwt.io/?value={{user.id_token}}" target="_blank">this</a> link to see decoded token.</small>
+                </div>
+            </form>
         </div>
     </div>
     <div class="row">

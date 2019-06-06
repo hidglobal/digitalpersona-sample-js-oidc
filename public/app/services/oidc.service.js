@@ -28,7 +28,7 @@
                         throw('oidcService.signin" Must call init method first');
                     }
 
-                    return userManager.signinPopup(args)
+                    return userManager.signinRedirect(args)
                         .then(function (user) {
                             $log.debug('oidcService.signin:<-- user=', user);
                             return user;
@@ -46,7 +46,7 @@
                         throw('oidcService.signinCallback:" Must call init method first');
                     }
 
-                    return userManager.signinPopupCallback(url)
+                    return userManager.signinRedirectCallback(url)
                         .then(function (user) {
                             $log.debug('oidcService.signinCallback:<-- signed in successfully', user);
                         })
@@ -63,7 +63,7 @@
                         throw('oidcService.signout:" Must call init method first');
                     }
 
-                    return userManager.signoutPopup(args)
+                    return userManager.signoutRedirect(args)
                         .then(function () {
                             $log.debug('oidcService.signout:<-- signed out successfully');
                         })

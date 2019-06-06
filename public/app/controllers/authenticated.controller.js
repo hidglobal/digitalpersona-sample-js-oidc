@@ -19,7 +19,9 @@
             $scope.signout = function () {
                 oidcService.signout()
                     .then(function () {
-                        $location.path('/unauthorized');
+                        $scope.$apply(function () {
+                            $location.path('/unauthorized');
+                        });
                     })
                     .catch(function (error) {
                         $window.alert(error.message);
