@@ -1,20 +1,34 @@
 #Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+This is a sample project demonstrating a usage of digitalPersona Identity Provider in node express application. Sample application is using OpenID Connect protocol for the purpose of authenticating a user with digitalPersona identity provider   
 
 #Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+##Running this example
+* Install [DigitalPersona AD server and DigitalPersona AD Web Management Components](https://a3fcb69dc7037ab91b58f8ba-qnewmedia.netdna-ssl.com/wp-content/uploads/2019/05/DigitalPersona-AD-Administrator-Guide-3.pdf),or [DigitalPersona LDS server and DigitalPersona LDS Web Management Components](https://a3fcb69dc7037ab91b58f8ba-qnewmedia.netdna-ssl.com/wp-content/uploads/2019/05/DigitalPersona-LDS-Administrator-Guide-3.pdf).
+* To run this application, you first need to clone this repo by entering:
+```markdown
+git clone http://dp-tfs.crossmatch.net:8080/tfs/DevCollection/Dev/_git/digitalpersona-sample-js-oidc
+cd digitalpersona-sample-js-oidc/
+```
+* Install dependencies by running the following command in the project's root
+```markdown
+npm install
+```
+* Register sample application as OIDC client with DigitalPersona Identity Provider by adding the following into <b>&lt;Clients&gt;</b> element of <b>c:\Program Files\DigitalPersona\Web Management Components\DP STS\DPPassiveSTS\web.config</b> make sure to replace <b>&lt;your machine host name&gt;</b> with the actual discoverable host name 
+```xml
+            <add ClientId="digitalpersona-sample-js-oidc" DisplayName="DigitalPersona Sample Js Oidc" Secret="Ks8/V0rj592QVQ5hdT+7e1NbPLa7rlloDivSAR3shFA=" Flow="Implicit">
+              <RedirectUris>
+                <add Uri="http://<your machine host name>:3000/callback" />
+              </RedirectUris>
+              <PostLogoutRedirectUris>
+                <add Uri="http://<your machine host name>:3000/signout" />
+              </PostLogoutRedirectUris>
+            </add>
+```
+* Start sample application by running
+```markdown
+npm start
+```
+* Navigate browser to [http://&lt;your machine host name&gt;:3000/](http://<your machine host name>:3000/)
 
-#Build and Test
-TODO: Describe and show how to build your code and run the tests. 
-
-#Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
-
-If you want to learn more about creating good readme files then refer the following [guidelines](https://www.visualstudio.com/en-us/docs/git/create-a-readme). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+#Notes
+* Always use https in production
