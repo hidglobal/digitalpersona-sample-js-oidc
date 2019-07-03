@@ -38,6 +38,10 @@
                     <input type="text" value="{{user.id_token}}" class="form-control" id="inputIdToken" aria-describedby="smallIdToken" placeholder="No token has been provided">
                     <small id="smallIdToken" class="form-text text-muted">Click <a href="https://jwt.io/?value={{user.id_token}}" target="_blank">this</a> link to see decoded token.</small>
                 </div>
+                <div class="form-group">
+                    <label for="inputServiceResponse">This is your service response:</label>
+                    <input type="text" value="{{service_response}}" class="form-control" id="inputServiceResponse" aria-describedby="smallAccessToken" placeholder="Your service returned an empty response">
+                </div>
             </form>
         </div>
     </div>

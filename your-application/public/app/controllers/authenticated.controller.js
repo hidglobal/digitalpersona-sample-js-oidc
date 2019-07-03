@@ -3,13 +3,33 @@
     'use strict';
 
     angular.module('app.controllers')
-        .controller('authenticatedController', ['$log', '$location', '$scope', '$window', 'oidcService', function ($log, $location, $scope, $window, oidcService) {
+        .controller('authenticatedController', ['$log', '$location', '$scope', '$window', '$http', 'oidcService', function ($log, $location, $scope, $window, $http, oidcService) {
             $log.debug('authenticatedController: created');
+
+            // TODO change to vm
 
             oidcService.getCurrentUser()
                 .then(function (user) {
                     $scope.$apply(function () {
                         $scope.user = user;
+                    });
+
+                    var options = {
+                        method: 'GET',
+                        url: 'http://avetrovd10.crossmatch.net:3001/secured',
+                        //params : data,
+                        headers : {
+                            "Content-Type": "application/json;charset=UTF-8",
+                            "Accept": "application/json"
+                        },
+                        transformResponse: [function (data) {
+                            return data;
+                        }]
+                    };
+
+                    return $http(options).then(function (response) {
+                        $log.debug('authenticatedController: getCurrentUser: response.data = ' + response.data);
+                        $scope.service_response = response.data;
                     });
                 })
                 .catch(function (error) {

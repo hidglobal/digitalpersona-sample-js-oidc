@@ -6,17 +6,20 @@ function main() {
     var cors = require('cors');
 
     var app = express();
-    var port = 3000;
+    var port = 3001;
 
     app.use(cors()); /* For testing purposes only! */
-    app.use(express.static('public'));
-    app.use('/node_modules', express.static('node_modules'));
 
     app.get(
-        '/:ngroute',
+        '/secured',
         function (request, response) {
-            console.log('ngroute=' + request.params.ngroute);
-            response.sendFile(path.join(__dirname + '/public/index.html'));
+            var user = '';
+
+            var sampleResponse = {
+                data: user + ', welcome to the service'
+            };
+            // TODO response.type('json');
+            response.send(sampleResponse);
         }
     );
 
