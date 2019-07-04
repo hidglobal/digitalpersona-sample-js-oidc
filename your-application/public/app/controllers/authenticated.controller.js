@@ -20,7 +20,8 @@
                         //params : data,
                         headers : {
                             "Content-Type": "application/json;charset=UTF-8",
-                            "Accept": "application/json"
+                            "Accept": "application/json",
+                            "Authorization": "Bearer " + user.access_token
                         },
                         transformResponse: [function (data) {
                             return data;
@@ -30,7 +31,10 @@
                     return $http(options).then(function (response) {
                         $log.debug('authenticatedController: getCurrentUser: response.data = ' + response.data);
                         $scope.service_response = response.data;
-                    });
+                    })
+                        .catch(function (error) {
+                            $scope.service_response = error.message? error.message: error.status + ' ' + error.statusText;
+                        });
                 })
                 .catch(function (error) {
                     $window.alert(error.message);

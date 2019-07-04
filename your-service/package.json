@@ -12,7 +12,9 @@
   },
   "dependencies": {
     "express": "^4.17.0",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "express-bearer-token": "^2.4.0",
+    "jsonwebtoken": "^8.5.1"
   },
   "eslintConfig": {
     "env": {
