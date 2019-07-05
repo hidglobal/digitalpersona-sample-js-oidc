@@ -34,6 +34,7 @@ function main() {
                      WWW-Authenticate: Bearer realm="example"
                 * */
                 response.status(401);
+                response.set('Access-Control-Expose-Headers', 'WWW-Authenticate');
                 response.set('WWW-Authenticate', 'Bearer realm="' + realm + '"');
                 response.send('Unauthorized');
                 return ;
@@ -56,8 +57,11 @@ function main() {
                                    error="invalid_token",
                                    error_description="The access token expired"
                         */
+                        var error_description = error.message? (error.message + '(' + error.name + ')'): 'The access token expired';
+
                         response.status(401);
-                        response.set('WWW-Authenticate', 'Bearer realm="' + realm + '",error="invalid_token",error_description="The access token expired"');
+                        response.set('Access-Control-Expose-Headers', 'WWW-Authenticate');
+                        response.set('WWW-Authenticate', 'Bearer realm="' + realm + '",error="invalid_token",error_description="' + error_description + '"');
                         response.send('Unauthorized');
                         return;
                     }
@@ -65,10 +69,6 @@ function main() {
                     var sampleResponse = {
                         data: 'Subject: ' + decodedToken.sub + ', welcome to the service'
                     };
-
-                    /**
-                     * TODO Call userinfo endpoint to fetch display name
-                     */
 
                     response.setHeader('content-type', 'application/json');
                     response.send(sampleResponse);

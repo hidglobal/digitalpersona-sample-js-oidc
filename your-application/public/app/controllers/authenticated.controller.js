@@ -28,11 +28,13 @@
                         }]
                     };
 
-                    return $http(options).then(function (response) {
-                        $log.debug('authenticatedController: getCurrentUser: response.data = ' + response.data);
-                        $scope.service_response = response.data;
-                    })
+                    return $http(options).then(
+                        function (response) {
+                            $log.debug('authenticatedController: getCurrentUser: response.data = ' + response.data);
+                            $scope.service_response = response.data;
+                        })
                         .catch(function (error) {
+                            $scope.service_error = error.headers('WWW-Authenticate');
                             $scope.service_response = error.message? error.message: error.status + ' ' + error.statusText;
                         });
                 })

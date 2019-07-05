@@ -41,6 +41,7 @@
                 <div class="form-group">
                     <label for="inputServiceResponse">This is your service response:</label>
                     <input type="text" value="{{service_response}}" class="form-control" id="inputServiceResponse" aria-describedby="smallAccessToken" placeholder="Your service returned an empty response">
+                    <small id="smallServiceResponse" class="form-text text-muted" ng-show="service_error">Error details are <b>{{service_error}}</b></small>
                 </div>
             </form>
         </div>
