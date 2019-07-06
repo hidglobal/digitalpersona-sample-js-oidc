@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "name": "digitalpersona.sample.js.oidc.your.service",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  },
+  "dependencies": {
+    "express": "^4.17.0",
+    "cors": "^2.8.5",
+    "express-bearer-token": "^2.4.0",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "rules": {
+      "semi": "error"
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "name": "digitalpersona.sample.js.oidc",
+  "name": "digitalpersona.sample.js.oidc.your.application",
   "private": true,
   "main": "app.js",
   "scripts": {
@@ -14,7 +14,8 @@
     "express": "^4.17.0",
     "oidc-client": "^1.7.1",
     "angular": "^1.7.8",
-    "angular-route": "^1.7.8"
+    "angular-route": "^1.7.8",
+    "cors": "^2.8.5"
   },
   "eslintConfig": {
     "env": {
