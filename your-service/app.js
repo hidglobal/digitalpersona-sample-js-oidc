@@ -67,7 +67,7 @@ function main() {
                     }
 
                     var sampleResponse = {
-                        data: 'Subject: ' + decodedToken.sub + ', welcome to the service'
+                        data: 'Subject: ' + decodedToken.sub + ', welcome to /your-service'
                     };
 
                     response.setHeader('content-type', 'application/json');
