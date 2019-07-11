@@ -1,23 +1,23 @@
-#Introduction 
+# Introduction 
 This sample project demonstrating usage of DigitalPersona OIDC Identity Provider for the purpose of authentication in NodeJs Express application, written in AngularJs, and for the purpose of authorization in NodeJs Express REST service. There are two connected subprojects included: <b>/your-application</b> and <b>/your-service</b>
 
-#/your-application
+# /your-application
 Sample application that is using OpenID Connect protocol for the purpose of authenticating a user with DigitalPersona OIDC Identity Provider.   
 
-#/your-service
+# /your-service
 Sample service consumes an Access Token issued by DigitalPersona OIDC Identity Provider and responds only if valid token has been provided. Service is using third-party libraries to parse and validate Access Token if <b>/secured</b> path has been requested.   
 
-#Getting Started
-##Prerequisites
+# Getting Started
+## Prerequisites
 Before running this sample, you will need to install [DigitalPersona AD server and DigitalPersona AD Web Management Components](https://a3fcb69dc7037ab91b58f8ba-qnewmedia.netdna-ssl.com/wp-content/uploads/2019/05/DigitalPersona-AD-Administrator-Guide-3.pdf),or [DigitalPersona LDS server and DigitalPersona LDS Web Management Components](https://a3fcb69dc7037ab91b58f8ba-qnewmedia.netdna-ssl.com/wp-content/uploads/2019/05/DigitalPersona-LDS-Administrator-Guide-3.pdf) on a separate machine.
 
-##Running this example
+## Running this example
 * To run both application and service on your development machine, you first need to clone this repo by entering:
 ```markdown
 git clone http://dp-tfs.crossmatch.net:8080/tfs/DevCollection/Dev/_git/digitalpersona-sample-js-oidc
 cd digitalpersona-sample-js-oidc/
 ```
-###1. Setting up
+### 1. Setting up
 * Log into server where DigitalPersona is installed
 * Run Windows PowerShell(not regular command prompt) as an Administrator 
 * Create temporary folder
@@ -70,7 +70,7 @@ CertUtil: -encode command completed successfully.
 ```
 * Move c:\Certificates\signingCertificate.pem to your development machine into /your-service directory
 
-###2. Running /your-service
+### 2. Running /your-service
 * Change directory to /your-service
 * Install dependencies by running the following command in the project's root
 ```markdown
@@ -83,7 +83,7 @@ npm start
 * Navigate browser to [http://&lt;your machine host name&gt;:3001/secured](http://<your machine host name>:3001/secured)
 * Observe <b>Unauthorized</b> response, since no Access Token has not been provided
 
-###3. Running /your-application
+### 3. Running /your-application
 * Change directory to /your-application
 * Install dependencies by running the following command in the project's root
 ```markdown
@@ -110,5 +110,5 @@ npm start
 * Upon successful authentication with DigitalPersona identity provider, application displays user information along with the result returned from /your-service 
 
 
-#Notes
+# Notes
 * Always use https in production
