@@ -1,3 +1,4 @@
 .idea
+.vs
 /your-application/node_modules
 /your-service/node_modules
