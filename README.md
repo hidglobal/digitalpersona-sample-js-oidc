@@ -1,25 +1,34 @@
-# Introduction 
+---
+layout: default
+title: Overview
+nav_exclude: true
+---
+###### [DigitalPersona Access Management API ](https://hidglobal.github.io/digitalpersona-access-management-api/)/ DigitalPersona C++ Sample Application / Overview&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[\| View Repo \|](https://github.com/hidglobal/digitalpersona-sample-cpp/)  
+
+![](docs/assets/HID-DPAM-js-oidc-ample.png)    
+
+## Introduction
 This sample project demonstrating usage of DigitalPersona OIDC Identity Provider for the purpose of authentication in NodeJs Express application, written in AngularJs, and for the purpose of authorization in NodeJs Express REST service. There are two connected subprojects included: <b>/your-application</b> and <b>/your-service</b>
 
-# /your-application
+### /your-application
 Sample application that is using OpenID Connect protocol for the purpose of authenticating a user with DigitalPersona OIDC Identity Provider.   
 
-# /your-service
+### /your-service
 Sample service consumes an Access Token issued by DigitalPersona OIDC Identity Provider and responds only if valid token has been provided. Service is using third-party libraries to parse and validate Access Token if <b>/secured</b> path has been requested.   
 
-# Getting Started
-## Prerequisites
+## Getting Started
+### Prerequisites
 Before running this sample, you will need to install [DigitalPersona AD server and DigitalPersona AD Web Management Components](https://a3fcb69dc7037ab91b58f8ba-qnewmedia.netdna-ssl.com/wp-content/uploads/2019/05/DigitalPersona-AD-Administrator-Guide-3.pdf),or [DigitalPersona LDS server and DigitalPersona LDS Web Management Components](https://a3fcb69dc7037ab91b58f8ba-qnewmedia.netdna-ssl.com/wp-content/uploads/2019/05/DigitalPersona-LDS-Administrator-Guide-3.pdf) on a separate machine.
 
-## Running this example
+### Running this example
 * To run both application and service on your development machine, you first need to clone this repo by entering:
 ```markdown
 git clone http://dp-tfs.crossmatch.net:8080/tfs/DevCollection/Dev/_git/digitalpersona-sample-js-oidc
 cd digitalpersona-sample-js-oidc/
 ```
-### 1. Setting up
+#### 1. Setting up
 * Log into server where DigitalPersona is installed
-* Run Windows PowerShell(not regular command prompt) as an Administrator 
+* Run Windows PowerShell(not regular command prompt) as an Administrator
 * Create temporary folder
 ```markdown
 mkdir c:/Certificates
@@ -66,11 +75,11 @@ Observe output
 ```markdown
 Input Length = 824
 Output Length = 1192
-CertUtil: -encode command completed successfully. 
+CertUtil: -encode command completed successfully.
 ```
 * Move c:\Certificates\signingCertificate.pem to your development machine into /your-service directory
 
-### 2. Running /your-service
+#### 2. Running /your-service
 * Change directory to /your-service
 * Install dependencies by running the following command in the project's root
 ```markdown
@@ -83,22 +92,22 @@ npm start
 * Navigate browser to [http://&lt;your machine host name&gt;:3001/secured](http://<your machine host name>:3001/secured)
 * Observe <b>Unauthorized</b> response, since no Access Token has not been provided
 
-### 3. Running /your-application
+#### 3. Running /your-application
 * Change directory to /your-application
 * Install dependencies by running the following command in the project's root
 ```markdown
 npm install
 ```
-* Register sample application as OIDC client with DigitalPersona Identity Provider by adding the following into <b>&lt;Clients&gt;</b> element of <b>c:\Program Files\DigitalPersona\Web Management Components\DP STS\DPPassiveSTS\web.config</b> make sure to replace <b>&lt;your machine host name&gt;</b> with the actual discoverable host name 
+* Register sample application as OIDC client with DigitalPersona Identity Provider by adding the following into <b>&lt;Clients&gt;</b> element of <b>c:\Program Files\DigitalPersona\Web Management Components\DP STS\DPPassiveSTS\web.config</b> make sure to replace <b>&lt;your machine host name&gt;</b> with the actual discoverable host name
 ```xml
-            <add ClientId="digitalpersona-sample-js-oidc" DisplayName="DigitalPersona Sample Js Oidc" Secret="Ks8/V0rj592QVQ5hdT+7e1NbPLa7rlloDivSAR3shFA=" Flow="Implicit">
-              <RedirectUris>
-                <add Uri="http://<your machine host name>:3000/callback" />
-              </RedirectUris>
-              <PostLogoutRedirectUris>
-                <add Uri="http://<your machine host name>:3000/signout" />
-              </PostLogoutRedirectUris>
-            </add>
+    <add ClientId="digitalpersona-sample-js-oidc" DisplayName="DigitalPersona Sample Js Oidc" Secret="Ks8/V0rj592QVQ5hdT+7e1NbPLa7rlloDivSAR3shFA=" Flow="Implicit">
+        <RedirectUris>
+            <add Uri="http://<your machine host name>:3000/callback" />
+        </RedirectUris>
+        <PostLogoutRedirectUris>
+            <add Uri="http://<your machine host name>:3000/signout" />
+        </PostLogoutRedirectUris>
+    </add>
 ```
 * Start sample application by running
 ```markdown
@@ -107,8 +116,8 @@ npm start
 * Navigate browser to [http://&lt;your machine host name&gt;:3000/](http://<your machine host name>:3000/)
 * Click <i>Sign in</i> button
 * Upon clicking <i>Sign in</i> button, DigitalPersona identity provider appears
-* Upon successful authentication with DigitalPersona identity provider, application displays user information along with the result returned from /your-service 
+* Upon successful authentication with DigitalPersona identity provider, application displays user information along with the result returned from /your-service
 
 
-# Notes
+## Notes
 * Always use https in production
