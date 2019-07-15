@@ -15,4 +15,4 @@ To view the digitalpersona-sample-js-oidc  GitHub Pages *documentation*,  click 
 
 To view the digitalpersona--sample-js-oidc  *repository*,  click this link.
 
-[Digitalpersona .NET Sample Application  repository](https://github.com/hidglobal/digitalpersona-sample-js-oidc/)
+[Digitalpersona .NET Sample Application  repository](https://github.com/hidglobal/digitalpersona-sample-js-oidc/) 
