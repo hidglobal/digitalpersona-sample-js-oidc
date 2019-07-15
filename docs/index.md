@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 layout: default
 title: Overview
@@ -16,3 +17,6 @@ To view the digitalpersona-sample-js-oidc  GitHub Pages *documentation*,  click 
 To view the digitalpersona--sample-js-oidc  *repository*,  click this link.
 
 [Digitalpersona .NET Sample Application  repository](https://github.com/hidglobal/digitalpersona-sample-js-oidc/) 
+=======
+## This is a temp index.md file.
+>>>>>>> 48f877b1843cd0eb020dced92b9f3dfc443cbe7b
