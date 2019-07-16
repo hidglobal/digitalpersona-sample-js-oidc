@@ -8,37 +8,40 @@ nav_exclude: true
 ![](docs/assets/HID-DPAM-js-oidc-ample.png)    
 
 ## Introduction
-This sample project demonstrating usage of DigitalPersona OIDC Identity Provider for the purpose of authentication in NodeJs Express application, written in AngularJs, and for the purpose of authorization in NodeJs Express REST service. There are two connected subprojects included: <b>/your-application</b> and <b>/your-service</b>
+This sample project demonstrates using the DigitalPersona OIDC Identity Provider for the purpose of authentication in a NodeJs Express application. It is written in AngularJs, and authorization is implemented through a NodeJs Express REST service.
+
+There are two connected subprojects: <b>/your-application</b> and <b>/your-service</b>.
 
 ### /your-application
-Sample application that is using OpenID Connect protocol for the purpose of authenticating a user with DigitalPersona OIDC Identity Provider.   
+The sample application uses the OpenID Connect protocol for the purpose of authenticating a user via the DigitalPersona OIDC Identity Provider.   
 
 ### /your-service
-Sample service consumes an Access Token issued by DigitalPersona OIDC Identity Provider and responds only if valid token has been provided. Service is using third-party libraries to parse and validate Access Token if <b>/secured</b> path has been requested.   
+The sample service consumes an Access Token issued by the DigitalPersona OIDC Identity Provider and responds only if a valid token has been provided. The service uses third-party libraries to parse and validate the Access Token if a <b>/secured</b> path has been requested.   
 
 ## Getting Started
 ### Prerequisites
-Before running this sample, you will need to install [DigitalPersona AD server and DigitalPersona AD Web Management Components](https://a3fcb69dc7037ab91b58f8ba-qnewmedia.netdna-ssl.com/wp-content/uploads/2019/05/DigitalPersona-AD-Administrator-Guide-3.pdf),or [DigitalPersona LDS server and DigitalPersona LDS Web Management Components](https://a3fcb69dc7037ab91b58f8ba-qnewmedia.netdna-ssl.com/wp-content/uploads/2019/05/DigitalPersona-LDS-Administrator-Guide-3.pdf) on a separate machine.
+Before running this sample, you will need to install [DigitalPersona AD server and DigitalPersona AD Web Management Components](https://a3fcb69dc7037ab91b58f8ba-qnewmedia.netdna-ssl.com/wp-content/uploads/2019/05/DigitalPersona-AD-Administrator-Guide-3.pdf),or the [DigitalPersona LDS server and DigitalPersona LDS Web Management Components](https://a3fcb69dc7037ab91b58f8ba-qnewmedia.netdna-ssl.com/wp-content/uploads/2019/05/DigitalPersona-LDS-Administrator-Guide-3.pdf) on a separate machine.
 
 ### Running this example
-* To run both application and service on your development machine, you first need to clone this repo by entering:
+* To run both the smaple application and service on your development machine, you will first need to clone this repo by entering:
 ```markdown
 git clone http://dp-tfs.crossmatch.net:8080/tfs/DevCollection/Dev/_git/digitalpersona-sample-js-oidc
 cd digitalpersona-sample-js-oidc/
 ```
 #### 1. Setting up
-* Log into server where DigitalPersona is installed
-* Run Windows PowerShell(not regular command prompt) as an Administrator
-* Create temporary folder
+  * Log into server where DigitalPersona is installed.
+  * Run Windows PowerShell (not regular command prompt) as an Administrator.
+  * Create a temporary folder.
 ```markdown
 mkdir c:/Certificates
 ```
-* List all certificate subjects and corresponding thumbprints
+  * List all certificate subjects and their corresponding thumbprints.
 ```markdown
  Get-ChildItem -Path cert:\LocalMachine\My\ -Recurse | select subject,thumbprint
 ```
-Observe output
-```markdown
+  *Observe the output
+
+  ```markdown
 Subject                                                     Thumbprint
 -------                                                     ----------
 CN=WIN-EREPV5I4QUB.LDSdemo.com                              EC1ED52CC059E79E7217B970A63AC6638BF60415
@@ -48,9 +51,9 @@ CN=DP Web Enroll                                            D44754BEADDA86D9701C
 CN=LDSdemo-WIN-EREPV5I4QUB-CA, DC=LDSdemo, DC=com           803A65B46685B6C14B87D995BA03B73CE6913157
 CN=win-erepv5i4qub.ldsdemo.com                              57D820E59731D68E9191BC5F83A0E3D58A945AE1
 CN=DP Web Admin                                             378551947E87A2EF98277E99B89657A3F13ECFD5
-```
-* Find a certificate with a subject ending with <b>/dpsts</b> and note a thumbprint that is <b>E3183A8566D3E42EC995832CE0BBFFF4669F8A70</b> in the sample
-* Export that certificate in binary encoded DER format by running a command
+  ```
+  * Find a certificate with a subject ending with <b>/dpsts</b> and note a thumbprint that is <b>E3183A8566D3E42EC995832CE0BBFFF4669F8A70</b> in the sample
+  * Export that certificate in binary encoded DER format by running a command
 ```markdown
 Export-Certificate -Cert (Get-ChildItem -Path cert:\LocalMachine\My\<noted thumbprint>) -Type CERT -FilePath c:\Certificates\signingCertificate.cer
 ```
