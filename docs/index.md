@@ -23,7 +23,7 @@ The sample service consumes an Access Token issued by the DigitalPersona OIDC Id
 Before running this sample, you will need to install [DigitalPersona AD server and DigitalPersona AD Web Management Components](https://a3fcb69dc7037ab91b58f8ba-qnewmedia.netdna-ssl.com/wp-content/uploads/2019/05/DigitalPersona-AD-Administrator-Guide-3.pdf),or the [DigitalPersona LDS server and DigitalPersona LDS Web Management Components](https://a3fcb69dc7037ab91b58f8ba-qnewmedia.netdna-ssl.com/wp-content/uploads/2019/05/DigitalPersona-LDS-Administrator-Guide-3.pdf) on a separate machine.
 
 ### Running this example
-* To run both the sample application and service on your development machine, you will first need to clone this repo by entering:
+To run both the sample application and service on your development machine, you will first need to clone this repo by entering:
 ```markdown
 git clone http://dp-tfs.crossmatch.net:8080/tfs/DevCollection/Dev/_git/digitalpersona-sample-js-oidc
 cd digitalpersona-sample-js-oidc/
@@ -41,9 +41,9 @@ mkdir c:/Certificates
 ```
   * Observe the output
 
-  <table style="width:75%;margin-left:auto;margin-right:auto;">
+  <table style="width:85%;margin-left:auto;margin-right:auto;">
     <tr>
-      <th style="width:50%" ALIGN="left">Subject</th>
+      <th style="width:60%" ALIGN="left">Subject</th>
       <th style="width:35%" ALIGN="left">Thumbprint</th>
     </tr>
     <tr>
