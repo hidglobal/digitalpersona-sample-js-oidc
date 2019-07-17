@@ -79,7 +79,7 @@ mkdir c:/Certificates
   * Find a certificate with a subject ending with <b>/dpsts</b> and note a thumbprint that is <b>E3183A8566D3E42EC995832CE0BBFFF4669F8A70</b> in the sample
   * Export that certificate in binary encoded DER format by running a command
 
-    ```markdown
+```markdown
 Export-Certificate -Cert (Get-ChildItem -Path cert:\LocalMachine\My\<noted thumbprint>) -Type CERT -FilePath c:\Certificates\signingCertificate.cer
 ```
 For instance,
@@ -88,7 +88,7 @@ PS C:\Windows\system32> Export-Certificate -Cert (Get-ChildItem -Path cert:\Loca
 ```
 Observe the output.  
 
-    ```markdown
+```markdown
     Directory: C:\Certificates
 
     Mode                LastWriteTime       Length Name
@@ -98,31 +98,31 @@ Observe the output.
 
   * Convert the exported certificate into Base64 encoded format by running:
 
-    ```markdown
+```markdown
 certutil -encode c:\Certificates\signingCertificate.cer c:\Certificates\signingCertificate.pem
 ```
   * Observe the output.  
 
-    ```markdown
+```markdown
 Input Length = 824
 Output Length = 1192
 CertUtil: -encode command completed successfully.
 ```
-  * Move C:\Certificates\signingCertificate.pem to your development machine into the /your-service directory
+* Move C:\Certificates\signingCertificate.pem to your development machine into the /your-service directory
 
 #### 2. Running /your-service
 * Change the directory to /your-service.
 * Install dependencies by running the following command in the project's root.  
 
-  ```markdown
+```markdown
 npm install
 ```  
 
 * Start sample application by running  
 
-  ```markdown
+```markdown
 npm start
-  ```
+```
 * In your web browser, open <A HREF="http://<your machine host name>:3001/secured>">http://&lt;your machine host name>:3001/secured</A>.
 
 * Observe <b>Unauthorized</b> response, since no Access Token has been provided.
@@ -132,14 +132,14 @@ npm start
 * Change directory to /your-application
 * Install dependencies by running the following command in the project's root  
 
-  ```markdown
+```markdown
 npm install
 ```
 * Register the sample application as an OIDC client with DigitalPersona Identity Provider by adding the following into the  <b>&lt;Clients&gt;</b> element of <b>C:\Program Files\DigitalPersona\Web Management Components\DP STS\DPPassiveSTS\web.config</b>.  
 
   Make sure to replace <b>&lt;your machine host name&gt;</b> in the code below with the actual discoverable host name.
 
-  ```xml
+```xml
     <add ClientId="digitalpersona-sample-js-oidc" DisplayName="DigitalPersona Sample Js Oidc" Secret="Ks8/V0rj592QVQ5hdT+7e1NbPLa7rlloDivSAR3shFA=" Flow="Implicit">
         <RedirectUris>
             <add Uri="http://<your machine host name>:3000/callback" />
@@ -151,7 +151,7 @@ npm install
 ```
 * Start the sample application by running:
 
-  ```markdown
+```markdown
 npm start
 ```
 
