@@ -14,7 +14,7 @@ Before running this sample, you will need to install [DigitalPersona AD server a
 ## Running this example
 * To run both application and service on your development machine, you first need to clone this repo by entering:
 ```markdown
-git clone http://dp-tfs.crossmatch.net:8080/tfs/DevCollection/Dev/_git/digitalpersona-sample-js-oidc
+git clone https://github.com/hidglobal/digitalpersona-sample-js-oidc.git
 cd digitalpersona-sample-js-oidc/
 ```
 ### 1. Setting up
