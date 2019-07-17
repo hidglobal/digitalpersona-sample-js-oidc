@@ -29,8 +29,8 @@ git clone http://dp-tfs.crossmatch.net:8080/tfs/DevCollection/Dev/_git/digitalpe
 cd digitalpersona-sample-js-oidc/
 ```
 #### 1. Setting up
-  * Log into server where DigitalPersona is installed.
-  * Run Windows PowerShell (not regular command prompt) as an Administrator.
+  * Log into the server where DigitalPersona is installed.
+  * Run Windows PowerShell (not the regular command prompt) as an Administrator.
   * Create a temporary folder.
 ```markdown
 mkdir c:/Certificates
@@ -76,8 +76,8 @@ mkdir c:/Certificates
     </tr>     
   </table>
 
-  * Find a certificate with a subject ending with <b>/dpsts</b> and note a thumbprint that is <b>E3183A8566D3E42EC995832CE0BBFFF4669F8A70</b> in the sample
-  * Export that certificate in binary encoded DER format by running a command
+  * Find a certificate with a subject ending with <b>/dpsts</b> and note a thumbprint that is <b>E3183A8566D3E42EC995832CE0BBFFF4669F8A70</b> in the sample.
+  * Export that certificate in binary encoded DER format by running the command
 
     ```markdown
 Export-Certificate -Cert (Get-ChildItem -Path cert:\LocalMachine\My\<noted thumbprint>) -Type CERT -FilePath c:\Certificates\signingCertificate.cer

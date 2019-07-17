@@ -29,8 +29,8 @@ git clone https://github.com/hidglobal/digitalpersona-sample-js-oidc.git
 cd digitalpersona-sample-js-oidc/
 ```
 #### 1. Setting up
-  * Log into server where DigitalPersona is installed.
-  * Run Windows PowerShell (not regular command prompt) as an Administrator.
+  * Log into the server where DigitalPersona is installed.
+  * Run Windows PowerShell (not the regular command prompt) as an Administrator.
   * Create a temporary folder.
 ```markdown
 mkdir c:/Certificates
@@ -76,8 +76,8 @@ mkdir c:/Certificates
     </tr>     
   </table>
 
-  * Find a certificate with a subject ending with <b>/dpsts</b> and note a thumbprint that is <b>E3183A8566D3E42EC995832CE0BBFFF4669F8A70</b> in the sample
-  * Export that certificate in binary encoded DER format by running a command
+  * Find a certificate with a subject ending with <b>/dpsts</b> and note a thumbprint that is <b>E3183A8566D3E42EC995832CE0BBFFF4669F8A70</b> in the sample.
+  * Export that certificate in binary encoded DER format by running the command
 
 ```markdown
 Export-Certificate -Cert (Get-ChildItem -Path cert:\LocalMachine\My\<noted thumbprint>) -Type CERT -FilePath c:\Certificates\signingCertificate.cer
@@ -94,14 +94,14 @@ Observe the output.
     Mode                LastWriteTime       Length Name
     ----                -------------       ------ ----
     -a---               7/5/2019 4:53 PM    824 signingCertificate.cer
-    ```  
+```  
 
-  * Convert the exported certificate into Base64 encoded format by running:
+* Convert the exported certificate into Base64 encoded format by running:
 
 ```markdown
 certutil -encode c:\Certificates\signingCertificate.cer c:\Certificates\signingCertificate.pem
 ```
-  * Observe the output.  
+* Observe the output.  
 
 ```markdown
 Input Length = 824
