@@ -1,7 +1,7 @@
-name: DigitalPersona Web Access Core API
-shortName: Core API
+name: DigitalPersona OIDC Sample Application
+shortName: OIDC Sample
 git: 'https://github.com/hidglobal'
-repo: digitalpersona-core
-package: '@digitalpersona/core'
-npm: 'https://www.npmjs.com/package/@digitalpersona/core'
+repo: digitalpersona-sample-js-oidc
+package: '@digitalpersona/sample-js-oidc'
+npm: 'https://www.npmjs.com/package/@digitalpersona/sample-js-oidc'
 api: core
