@@ -6,7 +6,7 @@ nav_order: 1
 {% include header.html %}  
 <BR>  
 
-# Introduction 1
+# Introduction
 This sample project demonstrates using the DigitalPersona OIDC Identity Provider for the purpose of authentication in a NodeJs Express application. It is written in AngularJs, and authorization is implemented through a NodeJs Express REST service.
 
 There are two connected subprojects: <b>/your-application</b> and <b>/your-service</b>.
