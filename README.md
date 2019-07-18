@@ -3,9 +3,8 @@ layout: default
 title: Overview
 nav_exclude: true
 ---
-###### [DigitalPersona Access Management API ](https://hidglobal.github.io/digitalpersona-access-management-api/)/ DigitalPersona C++ Sample Application / Overview&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[\| View Repo \|](https://github.com/hidglobal/digitalpersona-sample-cpp/)  
-
-![](docs/assets/HID-DPAM-js-oidc-sample.png)    
+{% include header.html %}  
+<BR>  
 
 ## Introduction
 This sample project demonstrates using the DigitalPersona OIDC Identity Provider for the purpose of authentication in a NodeJs Express application. It is written in AngularJs, and authorization is implemented through a NodeJs Express REST service.
