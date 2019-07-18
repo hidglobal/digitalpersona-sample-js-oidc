@@ -19,7 +19,10 @@ The sample service consumes an Access Token issued by the DigitalPersona OIDC Id
 
 # Getting Started
 ## Prerequisites
-Before running this sample, you will need to install [DigitalPersona AD server and DigitalPersona AD Web Management Components](https://a3fcb69dc7037ab91b58f8ba-qnewmedia.netdna-ssl.com/wp-content/uploads/2019/05/DigitalPersona-AD-Administrator-Guide-3.pdf),or the [DigitalPersona LDS server and DigitalPersona LDS Web Management Components](https://a3fcb69dc7037ab91b58f8ba-qnewmedia.netdna-ssl.com/wp-content/uploads/2019/05/DigitalPersona-LDS-Administrator-Guide-3.pdf) on a separate machine.
+Before running this sample, you will need to install
+* Git
+* Latest NodeJS
+* [DigitalPersona AD server and DigitalPersona AD Web Management Components](https://a3fcb69dc7037ab91b58f8ba-qnewmedia.netdna-ssl.com/wp-content/uploads/2019/05/DigitalPersona-AD-Administrator-Guide-3.pdf),or the [DigitalPersona LDS server and DigitalPersona LDS Web Management Components](https://a3fcb69dc7037ab91b58f8ba-qnewmedia.netdna-ssl.com/wp-content/uploads/2019/05/DigitalPersona-LDS-Administrator-Guide-3.pdf) on a separate machine.
 
 ## Running this example
 * To run both the sample application and service on your development machine, you will first need to clone this repo by entering:
@@ -75,6 +78,7 @@ MIIDNDCCAhygAwIBAgIQOfiz4aeylZpA51F4ujT/xjANBgkqhkiG9w0BAQsFADAyMTAwLgYDVQQDDCdo
   * Save digitalpersona-sample-js-oidc\your-service\signingCertificate.pem file
 
 ### 2. Running /your-service
+* Open command line prompt as an Administrator.
 * Change the directory to /your-service.
 * Open package.json in text editor and locate <b>your-service</b> section
 
@@ -100,7 +104,7 @@ MIIDNDCCAhygAwIBAgIQOfiz4aeylZpA51F4ujT/xjANBgkqhkiG9w0BAQsFADAyMTAwLgYDVQQDDCdo
   }
 ```
 
-* Install dependencies by running the following command in the project's root.  
+* Install dependencies by running the following command inside /your-service directory.
 
 ```markdown
 npm install
@@ -116,7 +120,7 @@ npm start
 * Observe <b>Unauthorized</b> response, since no Access Token has been provided.
 
 ### 3. Running /your-application
-
+* Open command line prompt as an Administrator.
 * Change directory to /your-application
 * Install dependencies by running the following command in the project's root  
 
