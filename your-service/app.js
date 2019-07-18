@@ -7,16 +7,18 @@ function main() {
     var bearerToken = require('express-bearer-token');
     var jsonwebtoken = require('jsonwebtoken');
     var fs = require('fs');
+    var packageJson = require('./package.json');
 
     var app = express();
     var port = 3001;
     var realm = 'your-service';
     var clientid = 'digitalpersona-sample-js-oidc';
     var signingCertificate = fs.readFileSync('signingCertificate.pem');
+    var yourService = packageJson["your-service"];
     var verificationOptions = {
-        audience: 'https://win-je24ttb0q9g.virgo.com/dpsts/resources',
-        issuer: 'https://win-je24ttb0q9g.virgo.com/dpsts',
-        clockTolerance: 10
+        audience: yourService.authenticationOptions.audience,
+        issuer: yourService.authenticationOptions.issuer,
+        clockTolerance: yourService.authenticationOptions.clockTolerance
     };
 
     app.use(cors()); /* For testing purposes only! */
