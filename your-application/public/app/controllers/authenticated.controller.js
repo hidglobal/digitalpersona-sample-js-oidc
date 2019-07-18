@@ -16,7 +16,7 @@
 
                     var options = {
                         method: 'GET',
-                        url: 'http://avetrovd10.crossmatch.net:3001/secured',
+                        url: $window.location.protocol + '//' + $window.location.hostname + ':3001/secured',
                         //params : data,
                         headers : {
                             "Content-Type": "application/json;charset=UTF-8",

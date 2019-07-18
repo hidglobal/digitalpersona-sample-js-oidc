@@ -24,5 +24,12 @@
     "rules": {
       "semi": "error"
     }
+  },
+  "your-service": {
+    "authenticationOptions": {
+      "audience": "https://win-je24ttb0q9g.virgo.com/dpsts/resources",
+      "issuer": "https://win-je24ttb0q9g.virgo.com/dpsts",
+      "clockTolerance": 10
+    }
   }
 }
