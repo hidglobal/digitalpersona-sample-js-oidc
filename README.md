@@ -19,10 +19,11 @@ The sample service consumes an Access Token issued by the DigitalPersona OIDC Id
 
 # Getting Started
 ## Prerequisites
-Before running this sample, you will need to install
-* Git
-* Latest NodeJS
-* [DigitalPersona AD server and DigitalPersona AD Web Management Components](https://a3fcb69dc7037ab91b58f8ba-qnewmedia.netdna-ssl.com/wp-content/uploads/2019/05/DigitalPersona-AD-Administrator-Guide-3.pdf),or the [DigitalPersona LDS server and DigitalPersona LDS Web Management Components](https://a3fcb69dc7037ab91b58f8ba-qnewmedia.netdna-ssl.com/wp-content/uploads/2019/05/DigitalPersona-LDS-Administrator-Guide-3.pdf) on a separate machine.
+Before running this sample, you will need to
+* Install Git
+* Install latest NodeJS server
+* [Signup](https://www.crossmatch.com/digitalpersona-composite-authentication-free-trial/) for trial version of [DigitalPersona AD server and DigitalPersona AD Web Management Components](https://a3fcb69dc7037ab91b58f8ba-qnewmedia.netdna-ssl.com/wp-content/uploads/2019/05/DigitalPersona-AD-Administrator-Guide-3.pdf),or the [DigitalPersona LDS server and DigitalPersona LDS Web Management Components](https://a3fcb69dc7037ab91b58f8ba-qnewmedia.netdna-ssl.com/wp-content/uploads/2019/05/DigitalPersona-LDS-Administrator-Guide-3.pdf)
+* Install DigitalPersona them on a separate server.
 
 ## Running this example
 * To run both the sample application and service on your development machine, you will first need to clone this repo by entering:
