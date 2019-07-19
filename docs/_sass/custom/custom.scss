@@ -18,6 +18,7 @@ $mono-font-family: Lucida Console, monospace;
     h1 {
         font-size: 2em !important;
         line-height: 50% !important;
+        border-bottom: 1px solid #DEDEDE !important;
     }
     h2 {
         font-size: 1.8em !important;
@@ -39,7 +40,7 @@ $mono-font-family: Lucida Console, monospace;
     }
     h6 {
         font-size: 1em !important;
-        line-height: 10% !important;         
+        line-height: 10% !important;
         font-weight: bold;
         font-style: italic;
     }
