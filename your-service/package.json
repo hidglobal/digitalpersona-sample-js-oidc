@@ -24,5 +24,12 @@
     "rules": {
       "semi": "error"
     }
+  },
+  "your-service": {
+    "authenticationOptions": {
+      "audience": "https://<DigitalPersonaHostName>/dpsts/resources",
+      "issuer": "https://<DigitalPersonaHostName>/dpsts",
+      "clockTolerance": 10
+    }
   }
 }
