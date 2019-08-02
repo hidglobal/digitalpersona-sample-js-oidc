@@ -1,11 +1,3 @@
----
-layout: default
-title: Overview
-nav_exclude: true
----
-{% include header.html %}  
-<BR>  
-
 # Introduction
 This sample project demonstrates using the DigitalPersona OIDC Identity Provider for the purpose of authentication in a NodeJs Express application. It is written in AngularJs, and authorization is implemented through a NodeJs Express REST service.
 
@@ -70,7 +62,7 @@ cd digitalpersona-sample-js-oidc/
 -----BEGIN CERTIFICATE-----
 -----END CERTIFICATE-----
 ```
-  * Insert empty line in between <b>-----BEGIN CERTIFICATE-----</b> and <b>-----END CERTIFICATE-----</b>, then paste clipboard contents there, so it will look like 
+  * Insert empty line in between <b>-----BEGIN CERTIFICATE-----</b> and <b>-----END CERTIFICATE-----</b>, then paste clipboard contents there, so it will look like
 ```text
 -----BEGIN CERTIFICATE-----
 MIIDNDCCAhygAwIBAgIQOfiz4aeylZpA51F4ujT/xjANBgkqhkiG9w0BAQsFADAyMTAwLgYDVQQDDCdodHRwczovL3dpbi1qZTI0dHRiMHE5Zy52aXJnby5jb20vZHBzdHMwHhcNMTgwNDIzMTE1OTE4WhcNMjEwNDIzMTE1OTE4WjAyMTAwLgYDVQQDDCdodHRwczovL3dpbi1qZTI0dHRiMHE5Zy52aXJnby5jb20vZHBzdHMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDG6VksGwzvpF94yg425NcVkcXPcK1ss1gSNfcH4TDhHSTCeI4n3r0sBl+L5SCoFQu6BQYpg73U9MUDvDWM1b7vo9Ou4Ic5Q7JCflXEjKPRE5x3KkWX0e/5jG9doujF6Amf6PDJxykDA1ZQejXaqqnwsY4XjF5QkuaelzTkKXEBL3zrvJ6sVjSby49ALRf1uyHmrzX0ucMkO/d6/2+5kGltKKPKhIoGQ/ZWxm+/ujfjHOAn0O3ZbA/BUXZ9u4/KNrDRcEX4MopzI2P6ofgNBUo0dslN2nEys5Qt1iC92AWIt27Jf7UkuEnMiDaT56vaGm3KdnlWuJ/UJJECCX1039orAgMBAAGjRjBEMBMGA1UdJQQMMAoGCCsGAQUFBwMBMB0GA1UdDgQWBBSUfq3GfNRdFWFxpap1zR/YTAi04zAOBgNVHQ8BAf8EBAMCBSAwDQYJKoZIhvcNAQELBQADggEBAGJXFq091wYij3L4Mh0oGssDC/Z+J5NfrqRErImTCrrCkGXxh4500tvrIGOi0usm9Y3X+bldqmVxFgGPO1PwwAHO7zzB/YasQe7QN19Oe2VvR0lBvkaNEQor+u2k7dDJrpDW0vJ+YWDSFtpyHjGrtLQygGuDOo5UCzCSObVDDbfjNO/c7QtuCvZkzn11jhxIqjJHk3f5u40znPC33bmldbeVcpCaDgP7oZab81hg6WpmqZEJqF8mKr4vtBIxZsxaCHP95sKKMLX4shETiM7REsldkpqjawIJ7KRdqChUcFYz4ILV4BlRnUWWAWQv17uJHQV02Uozq2lhi3LVNNaELHQ=
@@ -165,8 +157,8 @@ npm start
 * In your web browser, open <A HREF="http://<your machine host name>:3000/>">http://&lt;your machine host name>:3000/</A>.
 
 * Click the <i>Sign in</i> button.  
-* Upon clicking the <i>Sign in</i> button, you are being redirected to the DigitalPersona Identity Provider.  
-* After successful authentication with the  DigitalPersona Identity Provider, sample application displays user information along with the result returned from /your-service.
+* Upon clicking the <i>Sign in</i> button, you will be redirected to the DigitalPersona Identity Provider.  
+* After successful authentication with the DigitalPersona Identity Provider, the sample application displays user information along with the result returned from /your-service.
 
 # Notes
 Always use https in production.
