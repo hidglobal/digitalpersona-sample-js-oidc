@@ -78,8 +78,8 @@ MIIDNDCCAhygAwIBAgIQOfiz4aeylZpA51F4ujT/xjANBgkqhkiG9w0BAQsFADAyMTAwLgYDVQQDDCdo
 ```json
   "your-service": {
     "authenticationOptions": {
-      "audience": "https://<DigitalPersonaHostName>/dpsts/resources",
-      "issuer": "https://<DigitalPersonaHostName>/dpsts",
+      "audience": "https://<DigitalPersonaSTSHostName>/dpsts/resources",
+      "issuer": "https://<DigitalPersonaSTSHostName>/dpsts",
       "clockTolerance": 10
     }
   }
@@ -124,7 +124,7 @@ npm install
 * Open public/app/app.controller.js in text editor and locate the following line of a code
 
 ```javascript
-    var digitalPersonaHostName = '<DigitalPersonaHostName>';
+    var digitalPersonaHostName = '<DigitalPersonaSTSHostName>';
 ```
 
 * Replace <b>&lt;DigitalPersonaHostName&gt;</b> with the actual host name for the server running DigitalPersona. The result would like like, assuming that win-je24ttb0q9g.virgo.com is the actual host name
@@ -140,10 +140,10 @@ npm install
 ```xml
     <add ClientId="digitalpersona-sample-js-oidc" DisplayName="DigitalPersona Sample Js Oidc" Secret="Ks8/V0rj592QVQ5hdT+7e1NbPLa7rlloDivSAR3shFA=" Flow="Implicit">
         <RedirectUris>
-            <add Uri="http://<your machine host name>:3000/callback" />
+            <add Uri="http://<SampleAppMachineName>:3000/callback" />
         </RedirectUris>
         <PostLogoutRedirectUris>
-            <add Uri="http://<your machine host name>:3000/signout" />
+            <add Uri="http://<SampleAppMachineName>:3000/signout" />
         </PostLogoutRedirectUris>
     </add>
 ```
