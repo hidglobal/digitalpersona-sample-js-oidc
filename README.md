@@ -24,7 +24,7 @@ git clone https://github.com/hidglobal/digitalpersona-sample-js-oidc.git
 cd digitalpersona-sample-js-oidc/
 ```
 ### 1. Setting up
-  * Open the [https://&lt;DigitalPersonaHostName&gt;/dppassivests/wsfed/metadata](https://&lt;DigitalPersonaHostName&gt;/dppassivests/wsfed/metadata) in Web browser. The response will look like
+  * Open the [https://&lt;DigitalPersonaIdPHostName&gt;/dppassivests/wsfed/metadata](https://&lt;DigitalPersonaIdPHostName&gt;/dppassivests/wsfed/metadata) in Web browser. The response will look like
 
 ```xml
 <EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" ID="_32ce6961-33d6-4345-bbe3-9c71880494d6" entityID="https://win-je24ttb0q9g.virgo.com/dpsts">
@@ -78,14 +78,14 @@ MIIDNDCCAhygAwIBAgIQOfiz4aeylZpA51F4ujT/xjANBgkqhkiG9w0BAQsFADAyMTAwLgYDVQQDDCdo
 ```json
   "your-service": {
     "authenticationOptions": {
-      "audience": "https://<DigitalPersonaSTSHostName>/dpsts/resources",
-      "issuer": "https://<DigitalPersonaSTSHostName>/dpsts",
+      "audience": "https://<DigitalPersonaIdPHostName>/dpsts/resources",
+      "issuer": "https://<DigitalPersonaIdPHostName>/dpsts",
       "clockTolerance": 10
     }
   }
 ```
 
-* Replace <b>&lt;DigitalPersonaHostName&gt;</b> with the actual host name for the server running DigitalPersona. The result would like like, assuming that win-je24ttb0q9g.virgo.com is the actual host name
+* Replace <b>&lt;DigitalPersonaIdPHostName&gt;</b> with the actual host name for the server running DigitalPersona Identity Provider. The result would like like, assuming that win-je24ttb0q9g.virgo.com is the actual host name
 
 ```json
   "your-service": {
@@ -124,10 +124,10 @@ npm install
 * Open public/app/app.controller.js in text editor and locate the following line of a code
 
 ```javascript
-    var digitalPersonaHostName = '<DigitalPersonaSTSHostName>';
+    var digitalPersonaHostName = '<DigitalPersonaIdPHostName>';
 ```
 
-* Replace <b>&lt;DigitalPersonaHostName&gt;</b> with the actual host name for the server running DigitalPersona. The result would like like, assuming that win-je24ttb0q9g.virgo.com is the actual host name
+* Replace <b>&lt;DigitalPersonaIdPHostName&gt;</b> with the actual host name for the server running DigitalPersona Identity Provider. The result would like like, assuming that win-je24ttb0q9g.virgo.com is the actual host name
 
 ```javascript
     var digitalPersonaHostName = 'win-je24ttb0q9g.virgo.com';

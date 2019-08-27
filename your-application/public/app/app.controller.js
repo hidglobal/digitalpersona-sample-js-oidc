@@ -2,7 +2,7 @@
 (function () {
     'use strict';
 
-    var digitalPersonaHostName = '<DigitalPersonaHostName>';
+    var digitalPersonaHostName = '<DigitalPersonaIdPHostName>';
 
     angular.module('app.controllers', [])
         .controller('appController', ['$log', 'oidcService', '$window', function ($log, oidcService, $window) {
